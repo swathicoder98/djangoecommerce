@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content  %}
+<style>
+    .form-control{width: 20% !important;}
+</style>
+<br><br><br>
+<center>
+<!--    <div class="card">-->
+<form method="POST" style="...">
+    {% csrf_token %}
+    <div class="mb-3">
+         <label class="form-label">Phone No</label>
+      <input type="text" class="form-control" name="phone">
+     </div>
+     <div class="mb-3">
+      <label class="form-label text-white">Delivery Address</label>
+      <input type="text" class="form-control" name="address">
+     </div>
+    <div class="mb-3">
+      <label class="form-label text-white">Pin</label>
+      <input type="text" class="form-control" name="pin">
+     </div>
+    <button type="submit" class="btn_1">Submit</button>
+    </form>
+<!--        </div>-->
+</center>
+
+
+{% endblock  %}

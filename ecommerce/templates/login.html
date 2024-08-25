@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .form-control{
+   width: 30% !important;
+}
+    .submit{ width: 5% !important;}
+</style>
+<center>
+<h2> Login Here</h2>
+<!--<div class="card" style="width: 35rem;">-->
+<form method="POST" style="...">
+    {% csrf_token %}
+    <div class="mb-3">
+         <label class="form-label">Username</label>
+      <input type="text" class="form-control" name="username" placeholder="Enter username">
+     </div>
+     <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="Enter Password">
+     </div>
+    <div class="mb-3">
+      <input type="submit" class="form-control submit">
+     </div>
+
+</form>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    </center>
+{% endblock %}
+
+</body>
+</html>
