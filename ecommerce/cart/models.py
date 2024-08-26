@@ -1,7 +1,7 @@
 from django.db import models
 from shop.models import Product
 from django.contrib.auth.models import User
-
+from django.http import HttpResponse
 # Cart model
 
 
